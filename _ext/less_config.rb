@@ -28,10 +28,10 @@ module Awestruct
       def execute(site)
         output = ''
         if !site.jborg_fonts_url.nil?
-          output+= "@jborg_fonts_url: \"" + site.jborg_fonts_url + "\";\n"
+          output+= "@jborg_fonts_url: \"" + relative(site.jborg_fonts_url, site) + "\";\n"
         end
         if !site.jborg_images_url.nil?
-          output+= "@jborg_images_url: \"" + File.join(site.jborg_images_url , "common") + "\" ;\n"
+          output+= "@jborg_images_url: \"" + relative(File.join(site.jborg_images_url , "common"), site) + "\" ;\n"
         end
 
         # Create a temporary file with the merged content.
@@ -40,6 +40,22 @@ module Awestruct
         tmpOutputFile.write(output)
         tmpOutputFile.close
 
+      end
+
+      def relative(href, site)
+        if href.start_with?("http://") || href.start_with?("https://")
+          # do not touch absolute links
+          href
+        else
+          # bootstrap-community.css ends up in /stylesheets : be relative to that directory
+          begin
+            result = Pathname.new(File.join(site.config.dir, href)).relative_path_from(Pathname.new(File.join(site.config.stylesheets_dir, "bootstrap-community.css"))).to_s
+            result
+          rescue Exception => e
+            $LOG.error "#{e}" if $LOG.error?
+            $LOG.error "#{e.backtrace.join("\n")}" if $LOG.error?
+          end
+        end
       end
 
     end
