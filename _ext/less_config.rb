@@ -33,6 +33,9 @@ module Awestruct
         if !site.jborg_images_url.nil?
           output+= "@jborg_images_url: \"" + relative(File.join(site.jborg_images_url , "common"), site) + "\" ;\n"
         end
+        if !site.project_images_url.nil?
+          output+= "@project_images_url: \"" + relative(site.project_images_url, site) + "\" ;\n"
+        end
 
         # Create a temporary file with the merged content.
         tmpOutputPath = File.join( site.config.tmp_dir , "config-variables.less")
