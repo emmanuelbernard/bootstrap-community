@@ -1,0 +1,81 @@
+---
+layout: project-frame
+title: About Hibernate Tools
+project: tools
+title_partial: project/title-about.html.haml
+---
+
+-# Center body
+.row-fluid
+  .span8
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Hibernate Tools for Eclipse and Ant
+
+          Working with Hibernate is very easy and developers enjoy
+          using the APIs and the query language. Even creating mapping
+          metadata is not an overly complex task once you've mastered
+          the basics. Hibernate Tools makes working with Hibernate or
+          JPA even more pleasant.
+
+          Hibernate Tools is a toolset for Hibernate3 implemented as an
+          integrated suite of Eclipse plugins, together with a unified Ant task
+          for integration into the build cycle. Hibernate Tools is a core
+          component of JBoss Tools and hence also part of JBoss Developer
+          Studio.
+
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Mapping file editor
+
+          An editor for Hibernate XML mapping files, supporting
+          auto-completion and syntax highlighting. The editor even
+          supports semantic auto-completion for class names,
+          property/field names, table names and column names. 
+
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Console
+ 
+          The Hibernate Console perspective allows you to configure
+          database connections, provides visualization of classes and
+          their relationships and allows you to execute HQL queries
+          interactively against your database and browse the query
+          results.
+
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Easy to use
+
+          The most powerful feature of Hibernate Tools is a database
+          reverse engineering tool that can generate domain model
+          classes and Hibernate mapping files, annotated JPA entity
+          beans, HTML documentation or even an entire JBoss Seam
+          application in seconds!
+
+
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Wizards
+
+          Several wizards are provided, including wizards to quickly
+          generate Hibernate configuration (cfg.xml) files, and
+          Hibernate console configurations. 
+
+    .row-fluid
+      .span12.feature-block
+        :asciidoc
+          === Ant task
+
+          The Hibernate3 tools include a unified Ant task that allows
+          you to run schema generation, mapping generation, or Java
+          code generation as part of your build.
+
+  -# News right column
+  .span4
+    = partial( 'common/latest-news.html.haml', {"real_page" => page} )
