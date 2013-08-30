@@ -138,22 +138,10 @@ projects:
     name: Hibernate Tools
     icon: 'icon-tools'
     releases:
-      - version: 4.4.0.Alpha0
-        version_family: 4.4
-        date: 2013-07-21
-        stable: false
-        announcement_url: http://in.relation.to/Bloggers/HibernateSearch430FinalWasSpottedInBoston
-        summary: Metadata API, dynamic sharding, simpler Infinispan clustering
-      - version: 4.3.0.Final
-        version_family: 4.3
-        date: 2013-06-08
-        stable: true
-        announcement_url: http://in.relation.to/Bloggers/HibernateSearch430FinalWasSpottedInBoston
-        summary: Synchronous JGroups backend, JBoss AS and EAP modules, Near-Real-Time backend speed improvements, spatial improvements
     group_id: org.hibernate
     artifact_id: hibernate-tools
     reference_doc: http://docs.jboss.org/hibernate/tools/
-    reference_pdf: hibernate_search_reference.pdf
+    reference_pdf: hibernate_tools_reference.pdf
     license:
       name: LGPL v2.1
       url: https://raw.github.com/hibernate/hibernate-search/master/lgpl.txt
@@ -162,12 +150,6 @@ projects:
         - name: About
           href: '/tools/'
           css_class: 'icon-fixed-width icon-home'
-        - name: Downloads
-          href: '/search/downloads/'
-          css_class: 'icon-fixed-width icon-cloud-download'
-        - name: Documentation
-          href: '/search/documentation/'
-          css_class: 'icon-fixed-width icon-book'
       extern:
         - name: Issues
           href: 'https://hibernate.atlassian.net/browse/HBX'
